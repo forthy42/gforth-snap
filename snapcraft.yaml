@@ -11,10 +11,14 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 apps:
   gforth:
     command: bin/gforth
-
+    environment:
+      GFORTHPATH: /snap/gforth/current/lib/gforth/0.7.9_20190501
 parts:
   gforth:
     source: https://www.complang.tuwien.ac.at/forth/gforth/Snapshots/0.7.9_20190501/gforth-0.7.9_20190501.tar.xz
     plugin: autotools
     build-packages:
       - libtool-bin
+      - libltdl-dev
+    stage-packages:
+      - libltdl7
