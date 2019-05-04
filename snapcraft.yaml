@@ -7,12 +7,13 @@ description: |
 
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
+license: GPL-3.0+ # SPDX 2.0 identifiers
 
 apps:
   gforth:
     command: bin/gforth
     environment:
-      GFORTHPATH: /snap/gforth/current/lib/gforth/0.7.9_20190501
+      GFORTHPATH: /snap/gforth-mtrute/current/lib/gforth/0.7.9_20190501
     plugs: 
       - home
       - network
