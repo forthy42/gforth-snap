@@ -31,6 +31,7 @@ Gforth as a Snap package.
 ## Run gforth
 
   Install the snap with sudo
+
 ```
   $ sudo snap install --edge gforth-mtrute  
   gforth-mtrute (edge) 0.7.9-20190501 from mt (mtrute) installed
@@ -44,7 +45,7 @@ Gforth as a Snap package.
 
 Tested with Ubuntu 18.04 (bionic).
 
-
+```
   $ /snap/bin/gforth-mtrute.gforth 
   Gforth 0.7.9_20190501, Copyright (C) 1995-2018 Free Software Foundation, Inc.
   Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
