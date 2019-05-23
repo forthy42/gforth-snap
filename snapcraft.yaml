@@ -1,6 +1,6 @@
 name: gforth-mtrute # you probably want to 'snapcraft register <name>'
 base: core18 # the base snap is the execution environment for this snap
-version: '0.7.9-20190516' # just for humans, typically '1.2+git' or '1.3.2'
+version: '0.7.9-20190523' # just for humans, typically '1.2+git' or '1.3.2'
 summary: gforth snap # 79 char long summary
 description: |
   This is gforth snap
@@ -13,14 +13,14 @@ apps:
   gforth:
     command: bin/gforth
     environment:
-      GFORTHPATH: /snap/gforth-mtrute/current/lib/gforth/0.7.9_20190516
+      GFORTHPATH: /snap/gforth-mtrute/current/lib/gforth/0.7.9_20190523
     plugs: 
       - home
       - network
 
 parts:
   gforth:
-    source: https://www.complang.tuwien.ac.at/forth/gforth/Snapshots/0.7.9_20190516/gforth-0.7.9_20190516.tar.xz
+    source: https://www.complang.tuwien.ac.at/forth/gforth/Snapshots/0.7.9_20190523/gforth-0.7.9_20190523.tar.xz
     plugin: autotools
     build-packages:
       - libtool-bin
