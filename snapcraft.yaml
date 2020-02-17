@@ -14,6 +14,7 @@ apps:
     command: bin/gforth
     environment:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/site-forth:~+
+      GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200213/amd64/libcc-named
     plugs:
       - home
       - network
@@ -23,6 +24,7 @@ apps:
     command: bin/gforth-fast
     environment:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/site-forth:~+
+      GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200213/amd64/libcc-named
     plugs:
       - home
       - network
@@ -32,6 +34,7 @@ apps:
     command: bin/gforth-itc
     environment:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/site-forth:~+
+      GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200213/amd64/libcc-named
     plugs:
       - home
       - network
@@ -41,7 +44,8 @@ apps:
     command: bin/gforth-ditc
     environment:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/0.7.9_20200213:/snap/gforth-forthy/current/share/gforth/site-forth:~+
-    plugs: 
+      GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200213/amd64/libcc-named
+    plugs:
       - home
       - network
       - x11
@@ -49,10 +53,50 @@ apps:
 
 parts:
   gforth:
-    source: https://www.complang.tuwien.ac.at/forth/gforth/Snapshots/0.7.9_20200213/gforth-0.7.9_20200213.tar.xz
+#    source: https://www.complang.tuwien.ac.at/forth/gforth/Snapshots/0.7.9_20200213/gforth-0.7.9_20200213.tar.xz
+    source: https://net2o.de/gforth/gforth-0.7.9_20200213_5.tar.xz
     plugin: autotools
+    configflags:
+      - --with-install=swig,freetype-gl
+      - --disable-lib
     build-packages:
       - libtool-bin
       - libltdl-dev
+      - libx11-dev
+      - libx11-xcb-dev
+      - libxrandr-dev
+      - libgles2-mesa-dev
+      - libgl1-mesa-dev
+      - libwayland-dev
+      - libvulkan-dev
+      - libpng-dev
+      - libfreetype6-dev
+      - libffi-dev
+      - texinfo
+      - git
+      - g++
+      - premake4
+      - yodl
+      - bison
+      - libpcre3-dev
+      - libboost-dev
     stage-packages:
       - libltdl7
+      - libegl1
+      - libfreetype6
+      - libgl1
+      - libgles2
+      - libglvnd0
+      - libglx0
+      - libpng16-16
+      - libvulkan1
+      - libwayland-client0
+      - libwayland-cursor0
+      - libwayland-egl1
+      - libx11-6
+      - libxau6
+      - libxcb1
+      - libxdmcp6
+      - libxext6
+      - libxrandr2
+      - libxrender1
