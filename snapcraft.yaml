@@ -7,6 +7,7 @@ description: |
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
+type: app
 license: GPL-3.0+ # SPDX 2.0 identifiers
 
 apps:
@@ -16,48 +17,52 @@ apps:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/site-forth:~+
       GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200220/amd64/libcc-named
       GFORTHFONTS: /snap/gforth-forthy/current/usr/share/fonts/
+      LIBGL_DRIVERS_PATH: /snap/gforth-forthy/current/usr/lib/x86_64-linux-gnu/dri
     plugs:
       - home
       - network
       - x11
       - opengl
-      - desktop
+      - unity7
   gforth-fast:
     command: bin/gforth-fast
     environment:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/site-forth:~+
       GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200220/amd64/libcc-named
       GFORTHFONTS: /snap/gforth-forthy/current/usr/share/fonts/
+      LIBGL_DRIVERS_PATH: /snap/gforth-forthy/current/usr/lib/x86_64-linux-gnu/dri
     plugs:
       - home
       - network
       - x11
       - opengl
-      - desktop
+      - unity7
   gforth-itc:
     command: bin/gforth-itc
     environment:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/site-forth:~+
       GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200220/amd64/libcc-named
       GFORTHFONTS: /snap/gforth-forthy/current/usr/share/fonts/
+      LIBGL_DRIVERS_PATH: /snap/gforth-forthy/current/usr/lib/x86_64-linux-gnu/dri
     plugs:
       - home
       - network
       - x11
       - opengl
-      - desktop
+      - unity7
   gforth-ditc:
     command: bin/gforth-ditc
     environment:
       GFORTHPATH: .:/snap/gforth-forthy/current/lib/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/0.7.9_20200220:/snap/gforth-forthy/current/share/gforth/site-forth:~+
       GFORTHCCPATH: /snap/gforth-forthy/current/lib/gforth/0.7.9_20200220/amd64/libcc-named
       GFORTHFONTS: /snap/gforth-forthy/current/usr/share/fonts/
+      LIBGL_DRIVERS_PATH: /snap/gforth-forthy/current/usr/lib/x86_64-linux-gnu/dri
     plugs:
       - home
       - network
       - x11
       - opengl
-      - desktop
+      - unity7
 
 parts:
   prepare:
