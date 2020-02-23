@@ -5,27 +5,32 @@ Gforth as a Snap package.
 ## From snapstore
 
 ```
-  $ snap search gforth
-  Name           Version         Publisher  Notes  Summary
-  gforth-mtrute  0.7.9-20190501  mtrute     -      gforth snap
+$ snap search gforth
+Name           Version         Publisher  Notes  Summary
+gforth-forthy  0.7.9-20200220  forthy     -      Gforth development snap
+gforth-mtrute  0.7.9-20190627  mtrute     -      gforth snap
 
-  $ snap info gforth-mtrute
-  name:      gforth-mtrute
-  summary:   gforth snap
-  publisher: mt (mtrute)
-  license:   GPL-3.0+
-  description: |
-    This is gforth snap
-  commands:
-    - gforth-mtrute.gforth
-  snap-id:      cXf2H05AAoRzw6TOwmRucmuqHqkPJ0YQ
-  tracking:     edge
-  refresh-date: today at 11:30 CEST
-  channels:
-    stable:    --                                
-    candidate: --                                
-    beta:      --                                
-    edge:      0.7.9-20190501 2019-05-04 (3) 3MB -
+$ snap info gforth-forthy
+name:      gforth-forthy
+summary:   gforth snap
+publisher: –
+store-url: https://snapcraft.io/gforth-forthy
+license:   GPL-3.0+
+description: |
+  This is the weekly development snapshot of Gforth in snap format. Building
+  for snap has made considerable progress, all SWIG-generated libraries load,
+  OpenGL via GLX works.
+commands:
+  - gforth-forthy.gforth
+  - gforth-forthy.gforth-ditc
+  - gforth-forthy.gforth-fast
+  - gforth-forthy.gforth-itc
+refresh-date: today at 22:46 CET
+channels:
+  stable:    0.7.9-20200220 2020-02-23   (3) 56MB -
+  candidate: ↑
+  beta:      ↑
+  edge:      ↑
 ```
 
 ## Run gforth
@@ -33,27 +38,27 @@ Gforth as a Snap package.
   Install the snap with sudo
 
 ```
-  $ sudo snap install --edge gforth-mtrute  
-  gforth-mtrute (edge) 0.7.9-20190501 from mt (mtrute) installed
+$ sudo snap install gforth-forthy
+gforth-forthy 0.7.9-20200220 from Bernd Paysan (forthy) installed
 
-  $ snap list
-  Name                   Version         Rev   Tracking     Publisher      Notes
-  core                   16-2.38.1       6818  stable       canonical*     core
-  core18                 20190409        941   stable       canonical*     base
-  gforth-mtrute          0.7.9-20190501  3     edge         mtrute         -
+$ snap list
+Name             Version         Rev   Tracking  Publisher   Notes
+core18           20200124        1668  stable    canonical✓  base
+gforth-forthy    0.7.9-20200220  4     stable    forthy      -
 ```
 
 Tested with Ubuntu 18.04 (bionic).
 
 ```
-  $ /snap/bin/gforth-mtrute.gforth 
-  Gforth 0.7.9_20190501, Copyright (C) 1995-2018 Free Software Foundation, Inc.
-  Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
-  Type `help' for basic help
-  version-string   ok 2
-  type 0.7.9_20190501 ok
-  bye 
-  $
+$ /snap/bin/gforth-forthy.gforth 
+Gforth 0.7.9_20200220
+Authors: Anton Ertl, Bernd Paysan, Jens Wilke et al., for more type `authors'
+Copyright © 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `help' for basic help
+bye 
+$
 ```
 
 This snap has the right to access the network and the files within HOME.
@@ -64,13 +69,12 @@ you'll have to be me for that ;). If you want to build you own version,
 make sure to replace the string mtrute with your name.
 
 ```
-  $ snapcraft status gforth-mtrute
-  Track    Arch    Channel    Version         Revision
-  latest   amd64   stable     -               -
-                   candidate  -               -
-                   beta       -               -
-                   edge       0.7.9-20190501  3
-
+$ snapcraft status gforth-forthy
+Track    Arch    Channel    Version         Revision
+latest   amd64   stable     0.7.9-20200220  4
+                 candidate  ^               ^
+                 beta       ^               ^
+                 edge       ^               ^
 ```
 
 I run snapcraft in the project directory while being logged in.
