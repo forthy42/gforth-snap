@@ -1,6 +1,6 @@
 name: gforth # you probably want to 'snapcraft register <name>'
 base: core18 # the base snap is the execution environment for this snap
-version: '0.7.9-20200423' # just for humans, typically '1.2+git' or '1.3.2'
+version: '0.7.9-20200430' # just for humans, typically '1.2+git' or '1.3.2'
 summary: gforth snap # 79 char long summary
 description: |
   This is the weekly development snapshot of Gforth in snap format. Building
@@ -16,8 +16,8 @@ apps:
   gforth:
     command: bin/gforth
     environment:
-      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/site-forth:~+
-      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200423/amd64/libcc-named
+      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/site-forth:~+
+      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200430/amd64/libcc-named
       GFORTHFONTS: /snap/gforth/current/usr/share/fonts/
       LIBGL_DRIVERS_PATH: /snap/gforth/current/usr/lib/x86_64-linux-gnu/dri
       GFORTH_GL: glx
@@ -29,11 +29,13 @@ apps:
       - opengl
       - unity7
       - locale-control
+      - audio-playback
+      - audio-record
   gforth-fast:
     command: bin/gforth-fast
     environment:
-      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/site-forth:~+
-      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200423/amd64/libcc-named
+      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/site-forth:~+
+      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200430/amd64/libcc-named
       GFORTHFONTS: /snap/gforth/current/usr/share/fonts/
       LIBGL_DRIVERS_PATH: /snap/gforth/current/usr/lib/x86_64-linux-gnu/dri
       GFORTH_GL: glx
@@ -45,11 +47,13 @@ apps:
       - opengl
       - unity7
       - locale-control
+      - audio-playback
+      - audio-record
   gforth-itc:
     command: bin/gforth-itc
     environment:
-      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/site-forth:~+
-      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200423/amd64/libcc-named
+      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/site-forth:~+
+      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200430/amd64/libcc-named
       GFORTHFONTS: /snap/gforth/current/usr/share/fonts/
       LIBGL_DRIVERS_PATH: /snap/gforth/current/usr/lib/x86_64-linux-gnu/dri
       GFORTH_GL: glx
@@ -61,11 +65,13 @@ apps:
       - opengl
       - unity7
       - locale-control
+      - audio-playback
+      - audio-record
   gforth-ditc:
     command: bin/gforth-ditc
     environment:
-      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/0.7.9_20200423:/snap/gforth/current/share/gforth/site-forth:~+
-      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200423/amd64/libcc-named
+      GFORTHPATH: .:/snap/gforth/current/lib/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/0.7.9_20200430:/snap/gforth/current/share/gforth/site-forth:~+
+      GFORTHCCPATH: /snap/gforth/current/lib/gforth/0.7.9_20200430/amd64/libcc-named
       GFORTHFONTS: /snap/gforth/current/usr/share/fonts/
       LIBGL_DRIVERS_PATH: /snap/gforth/current/usr/lib/x86_64-linux-gnu/dri
       GFORTH_GL: glx
@@ -77,6 +83,8 @@ apps:
       - opengl
       - unity7
       - locale-control
+      - audio-playback
+      - audio-record
 
 parts:
   prepare:
@@ -103,7 +111,7 @@ parts:
     after:
        - prepare
        - desktop-glib-only
-    source: https://www.complang.tuwien.ac.at/forth/gforth/Snapshots/0.7.9_20200423/gforth-0.7.9_20200423.tar.xz
+    source: https://www.complang.tuwien.ac.at/forth/gforth/Snapshots/0.7.9_20200430/gforth-0.7.9_20200430.tar.xz
     plugin: autotools
     configflags:
       - --with-install=swig
