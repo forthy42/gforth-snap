@@ -175,4 +175,5 @@ parts:
       - libsoil2
       - freetype-gl
       - fonts-noto-emoji
+      - fonts-arphic-gkai00mp
       - fonts-awesome
